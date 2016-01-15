@@ -5,13 +5,23 @@ import java.util.Iterator;
 public interface IElement {
 	public IElement getParent();
 	
+	public void setParent(IElement parent);
+	
 	public IElements getChildren();
+	
+	public void appendChild(IElement child);
 	
 	public String getType();
 	
-	public Iterator<String> getProperties();
+	public String setType();
 	
-	public String getValue(String property);
+	public Iterator<String> getAttributes();
+	
+	public String getAttrValue(String attr);
+	
+	public String getText();
+	
+	public void setText(String text);
 	
 	public void print();
 }
