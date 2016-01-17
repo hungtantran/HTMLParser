@@ -13,7 +13,7 @@ public interface IElement {
 	
 	public String getType();
 	
-	public String setType();
+	public void setType(String type);
 	
 	public Iterator<String> getAttributes();
 	

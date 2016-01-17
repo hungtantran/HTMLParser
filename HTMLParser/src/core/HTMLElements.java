@@ -1,17 +1,29 @@
 package core;
 
-public class HTMLElements implements IElements {
+import java.util.ArrayList;
+import java.util.List;
 
+public class HTMLElements implements IElements {
+	private List<IElement> elems;
+	
+	public HTMLElements()
+	{
+		elems = new ArrayList<IElement>();
+	}
+	
 	@Override
 	public int size() {
-		// TODO Auto-generated method stub
-		return 0;
+		return elems.size();
 	}
 
 	@Override
 	public IElement getElement(int index) {
-		// TODO Auto-generated method stub
-		return null;
+		return elems.get(index);
+	}
+
+	@Override
+	public void append(IElement elem) {
+		elems.add(elem);
 	}
 
 }
