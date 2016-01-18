@@ -19,6 +19,8 @@ public interface IElement {
 	
 	public String getAttrValue(String attr);
 	
+	public void SetAttr(String attr, String value);
+	
 	public String getText();
 	
 	public void setText(String text);

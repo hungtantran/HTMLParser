@@ -1,10 +1,27 @@
 package core;
 
-public class HTMLDocument implements IDocument {
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 
+public class HTMLDocument implements IDocument {
+	private HTMLElement rootElem;
+	private final static Pattern tagPattern = Pattern.compile("\\Q<\\E(.+)\\Q>\\E");
+	
+	public HTMLDocument()
+	{
+		rootElem = new HTMLElement();
+		rootElem.setParent(null);
+	}
+	
 	@Override
 	public boolean Parse(String text) {
-		// TODO Auto-generated method stub
+		HTMLElement curElem = rootElem;
+		
+		while (true)
+		{
+			break;
+		}
+		
 		return false;
 	}
 
@@ -17,7 +34,18 @@ public class HTMLDocument implements IDocument {
 	@Override
 	public void printTree() {
 		// TODO Auto-generated method stub
-		
 	}
 
+	private int findNextTag(String html, HTMLTag nextTag)
+	{
+		Matcher match = tagPattern.matcher(html);
+		if (!match.find())
+		{
+			return -1;
+		}
+
+		nextTag = HTMLTag.Parse(match.group());
+		
+		return match.start();
+	}
 }

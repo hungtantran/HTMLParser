@@ -86,4 +86,9 @@ public class HTMLElement implements IElement {
 	public void print() {
 		// TODO Auto-generated method stub
 	}
+
+	@Override
+	public void SetAttr(String attr, String value) {
+		attrs.put(attr, value);
+	}
 }
